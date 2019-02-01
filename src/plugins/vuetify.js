@@ -8,7 +8,8 @@ import colors from 'vuetify/es5/util/colors';
 Vue.use(Vuetify, {
   iconfont: 'md',
   theme: {
-    primary: colors.orange.accent3,
-    secondary: colors.grey.lighten4,
+    primary: '#9c27b0',
+    secondary: colors.grey.lighten2,
+    ternery: colors.grey,
   },
 });

@@ -1,8 +1,8 @@
 <template>
     <nav>
-        <v-toolbar app dark clipped-right color="primary">
+        <v-toolbar app clipped-right flat dark class="primary">
             <v-toolbar-side-icon @click="drawerLeft = !drawerLeft"></v-toolbar-side-icon>
-            <v-toolbar-title>
+            <v-toolbar-title class="display-2 cursive">
                 <span>V</span>
                 <span class="font-weight-light">yly</span>
             </v-toolbar-title>
@@ -12,22 +12,49 @@
                 <v-icon right>exit_to_app</v-icon>
             </v-btn>
         </v-toolbar>
-        <v-navigation-drawer class="secondary text--light-grey" app v-model="drawerLeft">
-            <v-list>
-                <v-list-tile v-for="link in links" :key="link.text" router :to="link.route">
-                    <v-list-tile-action>
-                        <v-icon>{{ link.icon }}</v-icon>
-                    </v-list-tile-action>
-                    <v-list-tile-content>
-                        <v-list-tile-title>
-                            <span>{{ link.text }}</span>
-                        </v-list-tile-title>
-                    </v-list-tile-content>
-                </v-list-tile>
-            </v-list>
+
+        <v-navigation-drawer class="ternery text--light-grey" app dark v-model="drawerLeft">
+            <v-img
+                height="100%"
+                src="https://demos.creative-tim.com/vue-material-dashboard/img/sidebar-2.32103624.jpg"
+                gradient="to top right, rgba(0,0,0,.8), rgba(0,0,0,.9)"
+            >
+                <v-toolbar flat class="transparent">
+                    <v-list class="pa-0">
+                        <v-list-tile avatar>
+                            <v-list-tile-avatar>
+                                <img src="https://randomuser.me/api/portraits/men/85.jpg">
+                            </v-list-tile-avatar>
+
+                            <v-list-tile-content>
+                                <v-list-tile-title>Keith Abramo</v-list-tile-title>
+                            </v-list-tile-content>
+                        </v-list-tile>
+                    </v-list>
+                </v-toolbar>
+
+                <v-list>
+                    <v-list-tile active-class="primary text--light" ripple v-for="link in links" :key="link.text" router :to="link.route">
+                        <v-list-tile-action>
+                            <v-icon>{{ link.icon }}</v-icon>
+                        </v-list-tile-action>
+                        <v-list-tile-content>
+                            <v-list-tile-title>
+                                <span>{{ link.text }}</span>
+                            </v-list-tile-title>
+                        </v-list-tile-content>
+                    </v-list-tile>
+                </v-list>
+            </v-img>
         </v-navigation-drawer>
 
-        <v-navigation-drawer class="secondary text--light-grey" app clipped right v-model="drawerRight"></v-navigation-drawer>
+        <v-navigation-drawer
+            class="secondary text--light-grey"
+            app
+            clipped
+            right
+            v-model="drawerRight"
+        ></v-navigation-drawer>
     </nav>
 </template>
 
@@ -39,13 +66,20 @@ export default {
             drawerRight: true,
             links: [
                 { text: "Home", route: "/", icon: "home" },
-                { text: "My Events", route: "/myEvents", icon: "dashboard" },
-                { text: "Logout", route: "/logout", icon: "exit_to_app" }
+                {
+                    text: "Host Dashboard",
+                    route: "/hostdashboard",
+                    icon: "dashboard"
+                },
+                { text: "Profile", route: "/profile", icon: "person" }
             ]
         };
     }
 };
 </script>
 
-<style>
+<style scoped>
+    .cursive {
+        font-family: 'Tangerine', cursive;
+    }
 </style>
