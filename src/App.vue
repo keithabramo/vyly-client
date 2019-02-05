@@ -9,10 +9,20 @@
 
 <script>
 import Navbar from '@/components/Navbar';
+import Event from '@/components/Event';
+import Events from '@/components/Events';
+import MyEvents from '@/components/MyEvents';
+import Filter from '@/components/Filter';
 
 export default {
   name: 'App',
-  components: { Navbar },
+  components: {
+    Navbar,
+    Event,
+    Events,
+    MyEvents,
+    Filter,
+  },
   data() {
     return {
 

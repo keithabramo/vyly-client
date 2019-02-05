@@ -21,7 +21,7 @@
             >
                 <v-toolbar flat class="transparent">
                     <v-list class="pa-0">
-                        <v-list-tile avatar>
+                        <v-list-tile avatar router :to="{ name: 'profile' }" exact>
                             <v-list-tile-avatar>
                                 <img src="https://randomuser.me/api/portraits/men/85.jpg">
                             </v-list-tile-avatar>
@@ -34,7 +34,15 @@
                 </v-toolbar>
 
                 <v-list>
-                    <v-list-tile active-class="primary text--light" ripple v-for="link in links" :key="link.text" router :to="link.route">
+                    <v-list-tile
+                        active-class="primary text--light"
+                        ripple
+                        v-for="link in links"
+                        :key="link.text"
+                        router
+                        :to="{ name: link.route }"
+                        exact
+                    >
                         <v-list-tile-action>
                             <v-icon>{{ link.icon }}</v-icon>
                         </v-list-tile-action>
@@ -48,38 +56,36 @@
             </v-img>
         </v-navigation-drawer>
 
-        <v-navigation-drawer
-            class="secondary text--light-grey"
-            app
-            clipped
-            right
-            v-model="drawerRight"
-        ></v-navigation-drawer>
+
     </nav>
 </template>
 
 <script>
+
+
 export default {
-    data() {
-        return {
-            drawerLeft: false,
-            drawerRight: true,
-            links: [
-                { text: "Home", route: "/", icon: "home" },
-                {
-                    text: "Host Dashboard",
-                    route: "/hostdashboard",
-                    icon: "dashboard"
-                },
-                { text: "Profile", route: "/profile", icon: "person" }
-            ]
-        };
-    }
+  data() {
+    return {
+      drawerLeft: true,
+      links: [
+        {
+          text: 'Home',
+          route: 'home',
+          icon: 'home',
+        },
+        {
+          text: 'Host Dashboard',
+          route: 'dashboard',
+          icon: 'dashboard',
+        },
+      ],
+    };
+  },
 };
 </script>
 
 <style scoped>
-    .cursive {
-        font-family: 'Tangerine', cursive;
-    }
+.cursive {
+    font-family: "Tangerine", cursive !important;
+}
 </style>

@@ -1,5 +1,7 @@
 <template>
-  <div>My Events</div>
+  <div>
+    <h1>Host Dashboard</h1>
+  </div>
 </template>
 
 <script>

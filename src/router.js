@@ -1,7 +1,8 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import Home from './views/Home.vue';
-import MyEvents from './views/MyEvents.vue';
+import HostDashboard from './views/HostDashboard.vue';
+import profile from './views/Profile.vue';
 
 Vue.use(Router);
 
@@ -15,9 +16,14 @@ export default new Router({
       component: Home,
     },
     {
-      path: '/myEvents',
-      name: 'myEvents',
-      component: MyEvents,
+      path: '/user/dashboard/:userId',
+      name: 'dashboard',
+      component: HostDashboard,
+    },
+    {
+      path: '/user/:userId',
+      name: 'profile',
+      component: profile,
     },
   ],
 });
