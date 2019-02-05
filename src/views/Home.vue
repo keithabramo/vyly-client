@@ -6,13 +6,21 @@
       app
       clipped
       right
+      hide-overlay
       v-model="drawerRight"
-    ></v-navigation-drawer>
+    >
+      <Events></Events>
+    </v-navigation-drawer>
   </div>
 </template>
 
 <script>
+import Events from '@/components/Events';
+
 export default {
+  components: {
+    Events
+  },
   data() {
     return {
       drawerRight: true,

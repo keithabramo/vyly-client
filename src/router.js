@@ -16,12 +16,12 @@ export default new Router({
       component: Home,
     },
     {
-      path: '/user/dashboard/:userId',
+      path: '/user/dashboard',
       name: 'dashboard',
       component: HostDashboard,
     },
     {
-      path: '/user/:userId',
+      path: '/user',
       name: 'profile',
       component: profile,
     },

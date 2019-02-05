@@ -1,6 +1,6 @@
 <template>
     <nav>
-        <v-toolbar app clipped-right flat dark class="primary">
+        <v-toolbar app clipped-left clipped-right flat dark class="primary">
             <v-toolbar-side-icon @click="drawerLeft = !drawerLeft"></v-toolbar-side-icon>
             <v-toolbar-title class="display-2 cursive">
                 <span>V</span>
@@ -13,7 +13,7 @@
             </v-btn>
         </v-toolbar>
 
-        <v-navigation-drawer class="ternery text--light-grey" app dark v-model="drawerLeft">
+        <v-navigation-drawer class="ternery text--light-grey" app clipped dark width="220" v-model="drawerLeft">
             <v-img
                 height="100%"
                 src="https://demos.creative-tim.com/vue-material-dashboard/img/sidebar-2.32103624.jpg"
@@ -32,7 +32,7 @@
                         </v-list-tile>
                     </v-list>
                 </v-toolbar>
-
+                <v-divider light></v-divider>
                 <v-list>
                     <v-list-tile
                         active-class="primary text--light"
@@ -55,32 +55,28 @@
                 </v-list>
             </v-img>
         </v-navigation-drawer>
-
-
     </nav>
 </template>
 
 <script>
-
-
 export default {
-  data() {
-    return {
-      drawerLeft: true,
-      links: [
-        {
-          text: 'Home',
-          route: 'home',
-          icon: 'home',
-        },
-        {
-          text: 'Host Dashboard',
-          route: 'dashboard',
-          icon: 'dashboard',
-        },
-      ],
-    };
-  },
+    data() {
+        return {
+            drawerLeft: true,
+            links: [
+                {
+                    text: "Home",
+                    route: "home",
+                    icon: "home"
+                },
+                {
+                    text: "Host Dashboard",
+                    route: "dashboard",
+                    icon: "dashboard"
+                }
+            ]
+        };
+    }
 };
 </script>
 
