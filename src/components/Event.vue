@@ -1,10 +1,7 @@
 <template>
-    <v-hover>
         <v-card
             slot-scope="{ hover }"
             :class="`elevation-${hover ? 12 : 2}`"
-            class="mx-auto"
-            width="344"
         >
             <v-img :aspect-ratio="16/9" src="https://cdn.vuetifyjs.com/images/cards/cooking.png"></v-img>
             <v-card-title>
@@ -31,7 +28,6 @@
                 </v-btn>
             </v-card-title>
         </v-card>
-    </v-hover>
 </template>
 
 <script>

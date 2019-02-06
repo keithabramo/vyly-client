@@ -1,11 +1,24 @@
 <template>
     <div>
-        <Event v-for="event in events" :key="event.id" class="ma-1"></Event>
+        <v-toolbar color="secondary" flat>
+            <v-toolbar-title>Upcoming Events</v-toolbar-title>
+            <v-spacer></v-spacer>
+            <v-btn icon>
+                <v-icon>sort</v-icon>
+            </v-btn>
+        </v-toolbar>
+        <v-container fluid grid-list-md>
+            <v-layout row wrap>
+                <v-flex v-for="event in events" :key="event.id" xs6>
+                    <Event></Event>
+                </v-flex>
+            </v-layout>
+        </v-container>
     </div>
 </template>
 
 <script>
-import Event from '@/components/Event';
+import Event from "@/components/Event";
 
 export default {
     components: {
@@ -16,26 +29,25 @@ export default {
             events: [
                 {
                     id: 1,
-                    name: 'first event'
+                    name: "first event"
                 },
                 {
                     id: 2,
-                    name: 'first event'
+                    name: "first event"
                 },
                 {
                     id: 3,
-                    name: 'first event'
+                    name: "first event"
                 },
                 {
                     id: 4,
-                    name: 'first event'
-                },
+                    name: "first event"
+                }
             ]
-        }
+        };
     }
 };
 </script>
 
 <style>
-
 </style>
