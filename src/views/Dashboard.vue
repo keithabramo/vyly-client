@@ -1,7 +1,7 @@
 <template>
     <v-container>
         <v-content>
-            <h1>Profile</h1>
+            <h1>Dashboard</h1>
         </v-content>
     </v-container>
 </template>

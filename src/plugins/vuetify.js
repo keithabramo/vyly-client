@@ -19,5 +19,5 @@ const cyanTheme = {
 
 Vue.use(Vuetify, {
   iconfont: 'md',
-  theme: cyanTheme,
+  theme: purpleTheme,
 });

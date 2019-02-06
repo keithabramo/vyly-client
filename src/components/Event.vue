@@ -1,5 +1,6 @@
 <template>
         <v-card
+            ripple
             slot-scope="{ hover }"
             :class="`elevation-${hover ? 12 : 2}`"
         >
@@ -32,12 +33,13 @@
 
 <script>
 export default {
-    data: () => {
-        return {
-            value: 5,
-            reviews: 4
-        }
-    }
+  data: () => ({
+    value: 5,
+    reviews: 4,
+  }),
+  props: {
+
+  },
 };
 </script>
 
