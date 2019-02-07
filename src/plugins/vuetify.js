@@ -5,7 +5,9 @@ import 'vuetify/src/stylus/app.styl';
 import colors from 'vuetify/es5/util/colors';
 
 const purpleTheme = {
-  primary: '#9c27b0',
+  // primary: '#9c27b0',
+  // primary: colors.purple,
+  primary: colors.purple.lighten2,
   secondary: colors.purple.lighten5,
   ternery: colors.grey,
 };

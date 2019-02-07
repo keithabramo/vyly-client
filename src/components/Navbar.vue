@@ -59,17 +59,17 @@
 
 <script>
 export default {
-    data() {
-        return {
-            links: [
-                {
-                    text: "Dashboard",
-                    route: "dashboard",
-                    icon: "dashboard"
-                }
-            ]
-        };
-    }
+  data() {
+    return {
+      links: [
+        {
+          text: 'Dashboard',
+          route: 'dashboard',
+          icon: 'dashboard',
+        },
+      ],
+    };
+  },
 };
 </script>
 

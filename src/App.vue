@@ -12,19 +12,17 @@
 </template>
 
 <script>
-import Navbar from "@/components/Navbar";
+import Navbar from '@/components/Navbar';
 
 export default {
-    name: "App",
-    components: {
-        Navbar
-    },
-    data: () => {
-        return {
-            backgroundImage: require("@/assets/landing-background.jpg")
-            // backgroundImage: require("@/assets/landing-background-2.jpg")
-            //backgroundImage: "https://demos.creative-tim.com/vue-material-dashboard/img/sidebar-2.32103624.jpg"
-        };
-    }
+  name: 'App',
+  components: {
+    Navbar,
+  },
+  data: () => ({
+    backgroundImage: require('@/assets/landing-background.jpg'),
+    // backgroundImage: require("@/assets/landing-background-2.jpg")
+    // backgroundImage: "https://demos.creative-tim.com/vue-material-dashboard/img/sidebar-2.32103624.jpg"
+  }),
 };
 </script>

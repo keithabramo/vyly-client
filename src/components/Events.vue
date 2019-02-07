@@ -7,6 +7,7 @@
                 <v-icon>sort</v-icon>
             </v-btn>
         </v-toolbar>
+        
         <v-container fluid grid-list-md>
             <v-layout row wrap>
                 <v-flex v-for="event in events" :key="event.id" xs6>

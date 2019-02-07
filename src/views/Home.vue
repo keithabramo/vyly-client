@@ -4,7 +4,6 @@
         <v-navigation-drawer
             app
             clipped
-            width="220"
             v-model="drawerLeft"
             floating
             value="true"
@@ -31,20 +30,20 @@
 </template>
 
 <script>
-import Events from "@/components/Events";
-import MyEvents from "@/components/MyEvents";
-import EventFilter from "@/components/EventFilter";
+import Events from '@/components/Events';
+import MyEvents from '@/components/MyEvents';
+import EventFilter from '@/components/EventFilter';
 
 export default {
-    components: {
-        Events,
-        MyEvents,
-        EventFilter
-    },
-    data: () => ({
-        drawerLeft: true,
-        drawerRight: true
-    })
+  components: {
+    Events,
+    MyEvents,
+    EventFilter,
+  },
+  data: () => ({
+    drawerLeft: true,
+    drawerRight: true,
+  }),
 };
 </script>
 
@@ -53,7 +52,7 @@ export default {
     background: linear-gradient(
         to bottom left,
         rgba(0, 0, 0, 0) 40%,
-        rgba(0, 0, 0, 0.5) 
+        rgba(0, 0, 0, 0.5)
     );
 }
 
@@ -61,7 +60,7 @@ export default {
     background: linear-gradient(
         to bottom right,
         rgba(0, 0, 0, 0) 30%,
-        rgba(0, 0, 0, 0.5) 
+        rgba(0, 0, 0, 0.5)
     );
 }
-</style> 
+</style>

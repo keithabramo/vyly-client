@@ -17,10 +17,10 @@ export default {
   data: () => ({
   }),
   props: {
-      event: {
-        color: String,
-        year: Number,
-      },
+    event: {
+      color: String,
+      year: Number,
+    },
   },
 };
 </script>
