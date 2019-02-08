@@ -1,13 +1,5 @@
 <template>
     <div>
-        <v-toolbar flat color="transparent">
-            <v-toolbar-title>My Events</v-toolbar-title>
-            <v-spacer></v-spacer>
-            <v-btn icon>
-                <v-icon>sort</v-icon>
-            </v-btn>
-        </v-toolbar>
-
         <v-container fluid grid-list-md>
             <v-layout row wrap>
                 <v-timeline>

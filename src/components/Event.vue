@@ -1,5 +1,6 @@
 <template>
         <v-card
+            light
             ripple
             slot-scope="{ hover }"
             :class="`elevation-${hover ? 12 : 2}`"
