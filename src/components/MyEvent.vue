@@ -1,38 +1,55 @@
 <template>
-  <v-timeline-item small :color="tempColor">
-    <span
-      slot="opposite"
-      :class="`headline font-weight-bold ${tempColor}--text`"
-      v-text="event.date"
-    ></span>
+  <v-timeline-item :color="color" small>
+    <v-card slot="opposite" :class="`transparent ${color}--text`" flat>
+      <v-layout align-center justify-center>
+        <strong class="display-1 font-weight-regular mr-2">9</strong>
+        <div class="column text-sm-left">
+          <div class="title font-weight-light">Tuesday</div>
+          <div class="text-uppercase font-weight-light">February 2015</div>
+        </div>
+      </v-layout>
+    </v-card>
     <Event :event="event"></Event>
-    <!-- <div class="py-3">
-      <h2 :class="`headline font-weight-light mb-3 ${tempColor}--text`">{{ event.name }}</h2>
-      <div>
-        Lorem ipsum dolor sit amet, no nam oblique veritus.
-        Commune scaevola imperdiet nec ut, sed euismod convenire principes at.
-        Est et nobis iisque percipit, an vim zril disputando voluptatibus,
-        vix an salutandi sententiae.
-      </div>
-    </div> -->
   </v-timeline-item>
 </template>
 
 <script>
-import Event from '@/components/Event';
+import Event from "@/components/Event";
+import EventTimings from "@/store/eventTimings";
+
+const eventTimingToColor = {
+  [EventTimings.past]: 'warning',
+  [EventTimings.present]: 'primary',
+  [EventTimings.future]: 'info',
+}
 
 export default {
   components: {
     Event
   },
-  props: ['event'],
-  data() {
-    return {
-      tempColor: 'green',
-    };
-  },
+  props: ["event"],
+  computed: {
+    color() {
+      return eventTimingToColor[this.event.timing];
+    }
+  }
 };
 </script>
 
-<style>
+<style lang="scss" >
+$timeline-margin: 30px;
+
+.v-timeline-item__body, .v-timeline-item__opposite {
+  max-width: calc(50% - #{$timeline-margin}) !important;
+}
+
+.v-timeline-item:nth-child(even):not(.v-timeline-item--left) .v-timeline-item__opposite, 
+.v-timeline-item--right .v-timeline-item__opposite {
+  margin-right: ($timeline-margin * 2) !important;
+}
+
+.v-timeline-item:nth-child(odd):not(.v-timeline-item--right) .v-timeline-item__opposite, 
+.v-timeline-item--left .v-timeline-item__opposite {
+  margin-left: ($timeline-margin * 2) !important;
+}
 </style>

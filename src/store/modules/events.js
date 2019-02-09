@@ -2,6 +2,7 @@ import Event1Image from '@/assets/eventImages/Event1.jpg';
 import Event2Image from '@/assets/eventImages/Event2.jpg';
 import Event3Image from '@/assets/eventImages/Event3.jpg';
 import Event4Image from '@/assets/eventImages/Event4.jpg';
+import EventTimings from '@/store/eventTimings';
 
 
 export default {
@@ -73,12 +74,16 @@ export default {
           hostId: 3,
           type: 'Charity',
           date: '10/13/2019',
+          startTime: '9:45 am',
+          endTime: '12:45 pm',
           imageURL: Event1Image,
+          timing: EventTimings.past,
           host: {
             id: 4,
             name: 'Keith Abramo',
             averageRating: 3.8, // will need to eventually get average of their all events
             totalRatings: 45, // will need to eventually get average of their all events
+            imageURL: Event1Image,
           },
           ratings: [
             { score: 3.5, comment: 'this was rad' },
@@ -94,12 +99,16 @@ export default {
           hostId: 4,
           type: 'Raffle',
           date: '10/13/2019',
+          startTime: '9:45 am',
+          endTime: '12:45 pm',
           imageURL: Event2Image,
+          timing: EventTimings.present,
           host: {
             id: 4,
             name: 'Keith Abramo',
-            averageRating: 3.8, // will need to eventually get average of their all events
+            averageRating: 4.8, // will need to eventually get average of their all events
             totalRatings: 45, // will need to eventually get average of their all events
+            imageURL: Event2Image,
           },
           ratings: [
             { score: 3.5, comment: 'this was rad' },
@@ -115,17 +124,21 @@ export default {
           hostId: 4,
           type: 'Party',
           date: '10/13/2019',
+          startTime: '9:45 am',
+          endTime: '12:45 pm',
           imageURL: Event3Image,
+          timing: EventTimings.future,
           host: {
             id: 4,
             name: 'Keith Abramo',
-            averageRating: 3.8, // will need to eventually get average of their all events
+            averageRating: 1.8, // will need to eventually get average of their all events
             totalRatings: 45, // will need to eventually get average of their all events
+            imageURL: Event3Image,
           },
           ratings: [
             { score: 3.5, comment: 'this was rad' },
             { score: 5, comment: 'this was rad' },
-            { score: 4, comment: 'this was rad' },
+            { score: 1, comment: 'this was rad' },
             { score: 2, comment: 'this was rad' },
           ],
         },
@@ -136,12 +149,16 @@ export default {
           hostId: 4,
           type: 'Festival',
           date: '10/13/2019',
+          startTime: '9:45 am',
+          endTime: '12:45 pm',
           imageURL: Event4Image,
+          timing: EventTimings.future,
           host: {
             id: 4,
             name: 'Keith Abramo',
             averageRating: 3.8, // will need to eventually get average of their all events
             totalRatings: 45, // will need to eventually get average of their all events
+            imageURL: Event4Image,
           },
           ratings: [
             { score: 3.5, comment: 'this was rad' },

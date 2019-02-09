@@ -42,7 +42,7 @@
               <v-switch
                 v-model="eventTiming.future"
                 label="Future"
-                color="rgb(0,255,197)"
+                color="info"
                 class="ma-0 pa-0"
                 hide-details
               ></v-switch>
@@ -56,7 +56,7 @@
               <v-switch
                 v-model="eventTiming.past"
                 label="Past"
-                color="yellow"
+                color="warning"
                 class="ma-0"
                 hide-details
               ></v-switch>

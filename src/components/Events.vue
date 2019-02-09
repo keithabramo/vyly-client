@@ -1,28 +1,24 @@
 <template>
-    <div>
-        <v-container fluid grid-list-md>
-            <v-layout row wrap>
-                <v-flex v-for="event in events" :key="event.id" xs6>
-                    <Event :event="event"></Event>
-                </v-flex>
-            </v-layout>
-        </v-container>
-    </div>
+  <v-container px-2 fluid grid-list-md>
+    <v-layout row wrap>
+      <v-flex v-for="event in events" :key="event.id" xs6>
+        <Event :event="event"></Event>
+      </v-flex>
+    </v-layout>
+  </v-container>
 </template>
 
 <script>
-import Event from '@/components/Event';
-import { mapState } from 'vuex';
+import Event from "@/components/Event";
+import { mapState } from "vuex";
 
 export default {
   components: {
-    Event,
+    Event
   },
   computed: {
-    ...mapState('events', [
-      'events',
-    ]),
-  },
+    ...mapState("events", ["events"])
+  }
 };
 </script>
 
