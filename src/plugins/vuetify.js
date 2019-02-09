@@ -12,11 +12,11 @@ const purpleTheme = {
   ternery: colors.grey,
 };
 
-const cyanTheme = {
-  primary: colors.cyan.darken1,
-  secondary: colors.blueGrey.lighten5,
-  ternery: colors.grey,
-};
+// const cyanTheme = {
+//   primary: colors.cyan.darken1,
+//   secondary: colors.blueGrey.lighten5,
+//   ternery: colors.grey,
+// };
 
 
 Vue.use(Vuetify, {

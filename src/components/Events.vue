@@ -12,32 +12,16 @@
 
 <script>
 import Event from '@/components/Event';
+import { mapState } from 'vuex';
 
 export default {
   components: {
     Event,
   },
-  data() {
-    return {
-      events: [
-        {
-          id: 1,
-          name: 'first event',
-        },
-        {
-          id: 2,
-          name: 'first event',
-        },
-        {
-          id: 3,
-          name: 'first event',
-        },
-        {
-          id: 4,
-          name: 'first event',
-        },
-      ],
-    };
+  computed: {
+    ...mapState('events', [
+      'events',
+    ]),
   },
 };
 </script>

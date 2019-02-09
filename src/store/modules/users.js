@@ -5,31 +5,26 @@ export default {
   },
   getters: {
     user(state, userId) {
-      return state.users.find((user) => {
-        return user.id === userId;
-      });
+      return state.users.find(user => user.id === userId);
     },
   },
   mutations: {
 
     /* Users */
     setUsers(state, users) {
+      // eslint-disable-next-line no-param-reassign
       state.users = users;
     },
     addUser(state, user) {
       state.users.push(user);
     },
     removeUser(state, user) {
-      const index = state.users.findIndex((e) => {
-        return e.id === user.id;
-      });
+      const index = state.users.findIndex(e => e.id === user.id);
 
       state.users.splice(index, 1);
     },
     updateUser(state, user) {
-      const oldUser = state.users.find((e) => {
-        return e.id === user.id;
-      });
+      const oldUser = state.users.find(e => e.id === user.id);
 
       Object.assign(oldUser, user);
     },

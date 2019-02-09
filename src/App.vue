@@ -13,6 +13,9 @@
 
 <script>
 import Navbar from '@/components/Navbar';
+import backgroundImage from '@/assets/landing-background.jpg';
+// import backgroundImage from "@/assets/landing-background-2.jpg"
+// import backgroundImage from "https://demos.creative-tim.com/vue-material-dashboard/img/sidebar-2.32103624.jpg"
 
 export default {
   name: 'App',
@@ -20,9 +23,7 @@ export default {
     Navbar,
   },
   data: () => ({
-    backgroundImage: require('@/assets/landing-background.jpg'),
-    // backgroundImage: require("@/assets/landing-background-2.jpg")
-    // backgroundImage: "https://demos.creative-tim.com/vue-material-dashboard/img/sidebar-2.32103624.jpg"
+    backgroundImage,
   }),
 };
 </script>
