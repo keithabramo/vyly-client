@@ -32,7 +32,7 @@ export default {
 </script>
 
 <style lang="scss" >
-$timeline-margin: 30px;
+$timeline-margin: 25px;
 
 .v-timeline-item__body, .v-timeline-item__opposite {
   max-width: calc(50% - #{$timeline-margin}) !important;
