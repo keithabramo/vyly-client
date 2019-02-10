@@ -40,23 +40,11 @@
           <v-layout row wrap>
             <v-flex xs12>
               <v-switch
-                v-model="eventTiming.future"
-                label="Future"
-                color="info"
-                class="ma-0 pa-0"
-                hide-details
-              ></v-switch>
-              <v-switch
-                v-model="eventTiming.present"
-                label="Happening Now"
-                color="primary"
-                class="ma-0"
-                hide-details
-              ></v-switch>
-              <v-switch
-                v-model="eventTiming.past"
-                label="Past"
-                color="warning"
+                v-for="(eventTiming, index) in allEventTimings"
+                :key="index"
+                v-model="eventTimings[index]"
+                :label="eventTiming.label"
+                :color="eventTiming.color"
                 class="ma-0"
                 hide-details
               ></v-switch>
@@ -65,27 +53,28 @@
 
           <!-- Will need to do a for loop here and group in a grid for layout -->
           <v-subheader class="mt-2 px-0 grey--text text--darken-1">EVENT TYPE</v-subheader>
-          <v-checkbox v-model="eventTypes" label="Charity" class="ma-0" hide-details></v-checkbox>
-          <v-checkbox v-model="eventTypes" label="Festival" class="ma-0" hide-details></v-checkbox>
-          <v-checkbox v-model="eventTypes" label="Party" class="ma-0" hide-details></v-checkbox>
-          <v-checkbox v-model="eventTypes" label="Raffle" class="ma-0" hide-details></v-checkbox>
+
+          <v-checkbox
+            v-for="(eventType, index) in allEventTypes"
+            :key="index"
+            v-model="eventTypes[index]"
+            :label="eventType.label"
+            class="ma-0"
+            hide-details
+          ></v-checkbox>
 
           <!-- Would like to see these horizontal if possible -->
           <v-subheader class="mt-2 px-0 grey--text text--darken-1">EVENT VISIBILITY</v-subheader>
           <v-layout row wrap>
             <v-flex xs12>
               <v-switch
-                v-model="eventVisibility.open"
-                label="Public"
+                v-for="(eventVisibility, index) in allEventVisibilities"
+                :key="index"
+                v-model="eventVisibilities[index]"
+                :label="eventVisibility.label"
                 class="ma-0"
-                hide-details>
-              </v-switch>
-              <v-switch
-                v-model="eventVisibility.private"
-                label="Private"
-                class="ma-0"
-                hide-details>
-              </v-switch>
+                hide-details
+              ></v-switch>
             </v-flex>
           </v-layout>
 
@@ -97,26 +86,32 @@
 </template>
 
 <script>
+import { EventTimings, EventVisibilities, EventTypes } from '@/store/constants';
+
 export default {
   data: () => ({
     address: '',
     startDate: '',
     endDate: '',
-    eventTiming: {
-      past: false,
-      present: true,
-      future: true,
-    },
+    eventTimings: [],
     eventTypes: [],
-    eventVisibility: {
-      open: true,
-      closed: true,
-    },
+    eventVisibilities: [],
     hosts: [],
 
     startDateMenu: false,
     endDateMenu: false,
   }),
+  computed: {
+    allEventTypes() {
+      return EventTypes;
+    },
+    allEventTimings() {
+      return EventTimings;
+    },
+    allEventVisibilities() {
+      return EventVisibilities;
+    },
+  },
 };
 </script>
 

@@ -14,25 +14,20 @@
 </template>
 
 <script>
-import Event from "@/components/Event";
-import EventTimings from "@/store/eventTimings";
-
-const eventTimingToColor = {
-  [EventTimings.past]: 'warning',
-  [EventTimings.present]: 'primary',
-  [EventTimings.future]: 'info',
-}
+import Event from '@/components/Event';
+import { EventTimings } from '@/store/constants';
 
 export default {
   components: {
-    Event
+    Event,
   },
-  props: ["event"],
+  props: ['event'],
   computed: {
     color() {
-      return eventTimingToColor[this.event.timing];
-    }
-  }
+      const eventTiming = Object.values(EventTimings).find(e => e.name === this.event.timing)
+      return eventTiming.color;
+    },
+  },
 };
 </script>
 
@@ -43,13 +38,13 @@ $timeline-margin: 30px;
   max-width: calc(50% - #{$timeline-margin}) !important;
 }
 
-.v-timeline-item:nth-child(even):not(.v-timeline-item--left) .v-timeline-item__opposite, 
+.v-timeline-item:nth-child(even):not(.v-timeline-item--left) .v-timeline-item__opposite,
 .v-timeline-item--right .v-timeline-item__opposite {
   margin-right: ($timeline-margin * 2) !important;
 }
 
-.v-timeline-item:nth-child(odd):not(.v-timeline-item--right) .v-timeline-item__opposite, 
-.v-timeline-item--left .v-timeline-item__opposite {
+.v-timeline-item:nth-child(odd):not(.v-timeline-item--left) .v-timeline-item__opposite,
+.v-timeline-item--right .v-timeline-item__opposite {
   margin-left: ($timeline-margin * 2) !important;
 }
 </style>

@@ -9,16 +9,16 @@
 </template>
 
 <script>
-import Event from "@/components/Event";
-import { mapState } from "vuex";
+import Event from '@/components/Event';
+import { mapState } from 'vuex';
 
 export default {
   components: {
-    Event
+    Event,
   },
   computed: {
-    ...mapState("events", ["events"])
-  }
+    ...mapState('events', ['events']),
+  },
 };
 </script>
 

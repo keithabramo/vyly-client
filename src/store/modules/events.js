@@ -2,8 +2,7 @@ import Event1Image from '@/assets/eventImages/Event1.jpg';
 import Event2Image from '@/assets/eventImages/Event2.jpg';
 import Event3Image from '@/assets/eventImages/Event3.jpg';
 import Event4Image from '@/assets/eventImages/Event4.jpg';
-import EventTimings from '@/store/eventTimings';
-
+import { EventTimings, EventTypes } from '@/store/constants';
 
 export default {
   namespaced: true,
@@ -20,12 +19,8 @@ export default {
 
     /* Events */
     setEvents(state, events) {
-      console.log(events);
-
       // eslint-disable-next-line no-param-reassign
       state.events = events;
-
-      console.log(state.events);
     },
     addEvent(state, event) {
       state.events.push(event);
@@ -69,15 +64,18 @@ export default {
       const events = [
         {
           id: 1,
-          name: 'first event',
-          description: 'event description',
+          name: 'Keith\'s First Event',
+          description: `Eiusmod eu proident duis cillum. Ad veniam dolor Lorem velit pariatur nostrud cillum ipsum dolor magna consectetur. Magna reprehenderit cillum laborum aliqua irure aliquip enim. Fugiat ullamco cillum pariatur consequat est elit commodo non. Dolor aliquip id eu occaecat sint exercitation consequat ut. Dolore commodo do aliquip dolor quis deserunt aliquip labore amet aliquip. Minim pariatur sunt labore nostrud labore fugiat enim amet deserunt enim ea incididunt.
+                        Sit fugiat ea officia proident officia ad id. Ad dolor duis eiusmod sunt excepteur id mollit ut nulla cillum culpa consequat sit. Enim aute duis laboris ex adipisicing. Do labore ad sit amet voluptate in est deserunt incididunt. Ut labore ipsum nulla laborum non magna ullamco fugiat esse mollit fugiat dolor magna. Aliqua nisi sit Lorem ipsum aute minim est ea sit est adipisicing ex.`,
           hostId: 3,
-          type: 'Charity',
+          type: EventTypes.CHARITY.name,
           date: '10/13/2019',
           startTime: '9:45 am',
           endTime: '12:45 pm',
           imageURL: Event1Image,
-          timing: EventTimings.past,
+          timing: EventTimings.PAST.name,
+          rsvp: 53,
+          interested: 100,
           host: {
             id: 4,
             name: 'Keith Abramo',
@@ -94,15 +92,18 @@ export default {
         },
         {
           id: 2,
-          name: 'second event',
-          description: 'event description 3',
+          name: 'Becca\'s 29th Birthday!',
+          description: `Eiusmod eu proident duis cillum. Ad veniam dolor Lorem velit pariatur nostrud cillum ipsum dolor magna consectetur. Magna reprehenderit cillum laborum aliqua irure aliquip enim. Fugiat ullamco cillum pariatur consequat est elit commodo non. Dolor aliquip id eu occaecat sint exercitation consequat ut. Dolore commodo do aliquip dolor quis deserunt aliquip labore amet aliquip. Minim pariatur sunt labore nostrud labore fugiat enim amet deserunt enim ea incididunt.
+                        Sit fugiat ea officia proident officia ad id. Ad dolor duis eiusmod sunt excepteur id mollit ut nulla cillum culpa consequat sit. Enim aute duis laboris ex adipisicing. Do labore ad sit amet voluptate in est deserunt incididunt. Ut labore ipsum nulla laborum non magna ullamco fugiat esse mollit fugiat dolor magna. Aliqua nisi sit Lorem ipsum aute minim est ea sit est adipisicing ex.`,
           hostId: 4,
-          type: 'Raffle',
-          date: '10/13/2019',
-          startTime: '9:45 am',
-          endTime: '12:45 pm',
+          type: EventTypes.RAFFLE.name,
+          date: '2/14/2019',
+          startTime: '12:00 am',
+          endTime: '12:00 am',
           imageURL: Event2Image,
-          timing: EventTimings.present,
+          timing: EventTimings.PRESENT.name,
+          rsvp: 530,
+          interested: 2000,
           host: {
             id: 4,
             name: 'Keith Abramo',
@@ -120,14 +121,17 @@ export default {
         {
           id: 3,
           name: 'second event',
-          description: 'event description 3',
+          description: `Eiusmod eu proident duis cillum. Ad veniam dolor Lorem velit pariatur nostrud cillum ipsum dolor magna consectetur. Magna reprehenderit cillum laborum aliqua irure aliquip enim. Fugiat ullamco cillum pariatur consequat est elit commodo non. Dolor aliquip id eu occaecat sint exercitation consequat ut. Dolore commodo do aliquip dolor quis deserunt aliquip labore amet aliquip. Minim pariatur sunt labore nostrud labore fugiat enim amet deserunt enim ea incididunt.
+                        Sit fugiat ea officia proident officia ad id. Ad dolor duis eiusmod sunt excepteur id mollit ut nulla cillum culpa consequat sit. Enim aute duis laboris ex adipisicing. Do labore ad sit amet voluptate in est deserunt incididunt. Ut labore ipsum nulla laborum non magna ullamco fugiat esse mollit fugiat dolor magna. Aliqua nisi sit Lorem ipsum aute minim est ea sit est adipisicing ex.`,
           hostId: 4,
-          type: 'Party',
+          type: EventTypes.PARTY.name,
           date: '10/13/2019',
           startTime: '9:45 am',
           endTime: '12:45 pm',
           imageURL: Event3Image,
-          timing: EventTimings.future,
+          timing: EventTimings.FUTURE.name,
+          rsvp: 530,
+          interested: 2000,
           host: {
             id: 4,
             name: 'Keith Abramo',
@@ -145,14 +149,17 @@ export default {
         {
           id: 4,
           name: 'second event',
-          description: 'event description 3',
+          description: `Eiusmod eu proident duis cillum. Ad veniam dolor Lorem velit pariatur nostrud cillum ipsum dolor magna consectetur. Magna reprehenderit cillum laborum aliqua irure aliquip enim. Fugiat ullamco cillum pariatur consequat est elit commodo non. Dolor aliquip id eu occaecat sint exercitation consequat ut. Dolore commodo do aliquip dolor quis deserunt aliquip labore amet aliquip. Minim pariatur sunt labore nostrud labore fugiat enim amet deserunt enim ea incididunt.
+                        Sit fugiat ea officia proident officia ad id. Ad dolor duis eiusmod sunt excepteur id mollit ut nulla cillum culpa consequat sit. Enim aute duis laboris ex adipisicing. Do labore ad sit amet voluptate in est deserunt incididunt. Ut labore ipsum nulla laborum non magna ullamco fugiat esse mollit fugiat dolor magna. Aliqua nisi sit Lorem ipsum aute minim est ea sit est adipisicing ex.`,
           hostId: 4,
-          type: 'Festival',
+          type: EventTypes.FESTIVAL.name,
           date: '10/13/2019',
           startTime: '9:45 am',
           endTime: '12:45 pm',
           imageURL: Event4Image,
-          timing: EventTimings.future,
+          timing: EventTimings.FUTURE.name,
+          rsvp: 530,
+          interested: 2000,
           host: {
             id: 4,
             name: 'Keith Abramo',

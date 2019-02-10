@@ -11,16 +11,16 @@
 </template>
 
 <script>
-import MyEvent from "@/components/MyEvent";
-import { mapGetters } from "vuex";
+import MyEvent from '@/components/MyEvent';
+import { mapGetters } from 'vuex';
 
 export default {
   components: {
-    MyEvent
+    MyEvent,
   },
   computed: {
-    ...mapGetters("events", ["myEvents"])
-  }
+    ...mapGetters('events', ['myEvents']),
+  },
 };
 </script>
 

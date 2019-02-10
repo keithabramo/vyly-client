@@ -4,7 +4,7 @@
       <v-avatar size="14px">
         <img :src="host.imageURL">
       </v-avatar>
-      <span class="ml-1 gray--text text--darken-1 caption">{{ host.name }}</span>
+      <span class="ml-1 grey--text text--darken-2 caption">{{ host.name }}</span>
     </div>
     <div class="caption">
       <v-rating
@@ -16,7 +16,7 @@
         size="12"
         class="left"
       ></v-rating>
-      <span class="ml-1 grey--text text--darken-1">
+      <span class="ml-1 grey--text text--darken-2">
         {{ host.averageRating }}
         ({{ host.totalRatings }})
       </span>
